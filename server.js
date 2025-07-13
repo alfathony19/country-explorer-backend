@@ -63,6 +63,7 @@ app.listen(port, () => {
 });
 
 app.get("/user", (req, res) => {
+  res.send("Hello from backend!");
   const email = req.query.email;
   const sql = "SELECT * FROM users WHERE email = ?";
   db.query(sql, [email], (err, results) => {
